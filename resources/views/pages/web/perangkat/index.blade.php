@@ -33,8 +33,10 @@
                         <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
                             data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="index-2.html"><img
-                                            src="/images/perangkat/{{ $perangkat->avatar }}" alt=""></a></figure>
+                                <figure class="image-box"><a href="">
+                                        <img src="{{ asset('images/perangkat/' . $perangkat->avatar) }}"
+                                            alt="{{ $perangkat->avatar }}"></a>
+                                </figure>
                                 <div class="lower-content">
                                     <div class="author-box">
                                         <h4 style="font-family: Montserrat"><a

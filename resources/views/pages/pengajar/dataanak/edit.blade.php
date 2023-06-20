@@ -5,8 +5,7 @@
 
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+
             </ol>
         </nav>
 
@@ -36,7 +35,7 @@
                                 <label class="form-label">Jenis Kelamin</label>
                                 <input type="number" name="jenis_kelamin"
                                     class="form-control @error('jenis_kelamin') is-invalid @enderror"
-                                    placeholder="Masukkan Jumlah Penduduk" value="{{ $dataanak->jenis_kelamin }}">
+                                    placeholder="Masukkan Jenis Kelamin" value="{{ $dataanak->jenis_kelamin }}">
                             </div>
                             @error('jenis_kelamin')
                                 <span class="alert alert-danger">

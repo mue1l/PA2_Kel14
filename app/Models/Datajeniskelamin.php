@@ -9,9 +9,9 @@ class Datajeniskelamin extends Model
 {
     use HasFactory;
 
-    protected $table = 'jeniskelaminpenduduk';
+    protected $table = 'databerdasarkanjeniskelamin';
     protected $fillable = [
         'jenis_kelamin',
-        'jumlah'
+        'jumlah',
     ];
 }

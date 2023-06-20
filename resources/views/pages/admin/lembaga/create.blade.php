@@ -5,8 +5,7 @@
 
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+
             </ol>
         </nav>
 
@@ -49,7 +48,7 @@
                                     placeholder="Masukkan Alamat" value="{{ old('address') }}">
                             </div>
                             @error('address')
-                                <span class="alert alert-danger">       
+                                <span class="alert alert-danger">
                                     {{ $message }}
                                 </span>
                             @enderror

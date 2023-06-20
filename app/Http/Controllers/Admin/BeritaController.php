@@ -41,7 +41,7 @@ class BeritaController extends Controller
         $request->validate([
             'avatar' => 'required',
             'judul' => 'required',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required|image|mimes:jpg,png'
         ]);
 
         $path = public_path('images/berita');

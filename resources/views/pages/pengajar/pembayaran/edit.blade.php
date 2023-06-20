@@ -5,8 +5,7 @@
 
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+
             </ol>
         </nav>
 
@@ -39,6 +38,7 @@
                                     class="form-control @error('no_rekening') is-invalid @enderror"
                                     placeholder="Masukkan Posisi" value="{{ $pembayaran->no_rekening }}">
                             </div>
+
                             @error('no_rekening')
                                 <span class="alert alert-danger">
                                     {{ $message }}

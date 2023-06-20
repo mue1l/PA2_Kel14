@@ -44,7 +44,7 @@ class PengumumanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'avatar' => 'required',
+            'avatar' => 'requiredimage|mimes:jpg,png',
             'judul' => 'required',
             'deskripsi' => 'required'
         ]);

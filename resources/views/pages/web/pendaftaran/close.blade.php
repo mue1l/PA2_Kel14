@@ -5,7 +5,8 @@
     <section class="error-section centred">
         <div class="auto-container">
             <div class="inner-box">
-                <figure class="image-box"><img src="{{ asset('assets/web/images/pendaftarantutup.jpeg') }}" alt="">
+                <figure class="image-box"><img style="height:500px; width:500px;"
+                        src="{{ asset('assets/web/images/pendaftarantutup.jpeg') }}" alt="">
                 </figure>
                 <h2>Pendaftaran Belum Dibuka!</h2>
                 <p>Tenaga pengajar pada paud sipahutar belum membuka pendaftaran pada PAUD ini.<br />Silahkan menunggu

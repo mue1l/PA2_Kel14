@@ -10,6 +10,7 @@ class BeritaController extends Controller
 {
     public function index(Request $request)
     {
+        
         $search = $request->search;
         $beritas = Berita::where('judul', 'like', '%' . $request->search . '%')
                                 ->orWhere('deskripsi', 'like', '%' . $request->search . '%')

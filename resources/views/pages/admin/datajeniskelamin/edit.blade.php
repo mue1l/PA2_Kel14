@@ -5,8 +5,7 @@
 
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+
             </ol>
         </nav>
 
@@ -17,15 +16,16 @@
                         <h6 class="card-title">Form</h6>
                     </div>
                     <div class="card-body">
-                        <form class="forms-sample" action="{{ route('admin.datajeniskelamin.update', $datajeniskelamin->id) }}"
-                            method="POST" enctype="multipart/form-data">
+                        <form class="forms-sample"
+                            action="{{ route('admin.datajeniskelamin.update', $datajeniskelamin->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="mb-3">
                                 <label class="form-label">Jenis Kelamin</label>
                                 <input type="text" name="jenis_kelamin"
-                                    class="form-control @error('jenis_kelamin') is-invalid @enderror" placeholder="Masukkan jenis kelamin"
-                                    value="{{ $datajeniskelamin->jenis_kelamin }}">
+                                    class="form-control @error('jenis_kelamin') is-invalid @enderror"
+                                    placeholder="Masukkan jenis kelamin" value="{{ $datajeniskelamin->jenis_kelamin }}" readonly>
                             </div>
                             @error('jenis_kelamin')
                                 <span class="alert alert-danger">
@@ -33,7 +33,7 @@
                                 </span>
                             @enderror
                             <div class="mb-3">
-                                <label class="form-label">Jamlah penduduk</label>
+                                <label class="form-label">Jamlah penduduk sesuai gender</label>
                                 <input type="number" name="jumlah"
                                     class="form-control @error('jumlah') is-invalid @enderror"
                                     placeholder="Masukkan Jumlah Penduduk" value="{{ $datajeniskelamin->jumlah }}">

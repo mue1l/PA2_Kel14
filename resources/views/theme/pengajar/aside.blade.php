@@ -19,13 +19,13 @@
                     <span class="link-title">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item nav-category">Data</li>
+            {{-- <li class="nav-item nav-category">Data</li>
             <li class="nav-item">
                 <a href="{{ url('pengajar/dataanak') }}" class="nav-link">
                     <i class="link-icon" data-feather="box"></i>
                     <span class="link-title">Data Anak</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item nav-category">Pendaftaran Siswa</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#tables" role="button" aria-expanded="false"

@@ -64,14 +64,6 @@
                     </div>
                 @endforeach
             </div>
-            <div class="pagination-wrapper centred">
-                <ul class="pagination clearfix">
-                    <li><a href="blog.html"><i class="far fa-angle-double-left"></i></a></li>
-                    <li><a href="blog.html" class="current">1</a></li>
-                    <li><a href="blog.html">2</a></li>
-                    <li><a href="blog.html"><i class="far fa-angle-double-right"></i></a></li>
-                </ul>
-            </div>
         </div>
     </section>
 

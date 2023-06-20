@@ -39,12 +39,12 @@ class GaleriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'avatar' => 'required',
+            'avatar' => 'requiredimage|mimes:jpg,png',
             'judul' => 'required',
             'deskripsi' => 'required'
         ]);
 
-        $path = public_path('images/pengumuman');
+        $path = public_path('images/galeri');
         $avatar = $request->file('avatar');
         $avatar_name = $avatar->getClientOriginalName();
         $avatar->move($path, $avatar_name);

@@ -26,6 +26,7 @@ use App\Http\Controllers\Web\PendaftaranController;
 use App\Http\Controllers\Web\RequestsuratController;
 use App\Http\Controllers\Web\PembayarandaftarController;
 use App\Http\Controllers\Web\PerangkatController as WebPerangkatController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +77,4 @@ Route::resource('pembayarandaftar', PembayarandaftarController::class);
 // Route::get('/show_bayar', [PembayarandaftarController::class, 'show'])->name('pembayaran.show');
 Route::get('pembayaran', [PembayarandaftarController::class, 'pembayaran'])->name('pembayaran');
 Route::resource('profildesa', ProfildesaController::class);
+Auth::routes(['verify'=>true]);

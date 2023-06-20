@@ -9,6 +9,7 @@
     <title>Sistem Informasi Desa Sipahutar</title>
     <meta name="description" content="Login and Register Form Html Template">
     <meta name="author" content="harnishdesign.net">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logosipahutar.jpg') }}">
 
     <!-- Web Fonts
 ========================= -->

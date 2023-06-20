@@ -41,7 +41,7 @@ class LembagaController extends Controller
             'name' => 'required',
             'position' => 'required',
             'address' => 'required',
-            'avatar' => 'required'
+            'avatar' => 'requiredimage|mimes:jpg,png'
         ]);
 
         $path = public_path(',00t');

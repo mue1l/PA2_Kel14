@@ -44,7 +44,7 @@ class RekapanpendaftaranController extends Controller
             'uang_kurang' => 'required',
             'uang_lebih' => 'required'
         ]);
-        
+
         $rekapan = Rekapan::create([
             'nama_anak' => $request->input('nama_anak'),
             'tanggal_lahir' => $request->input('tanggal_lahir'),

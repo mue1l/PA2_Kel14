@@ -22,6 +22,7 @@ class PeminjamanController extends Controller
             return redirect()->route('login')->with('loginError', 'Silahkan login terlebih dahulu sebelum melakukan peminjaman!');;
         }
         $barang = Barang::where('nama', $request->namaalat)->first();
+        
         // dd($request->all());
         $request->validate([
             'namaalat' => 'required',

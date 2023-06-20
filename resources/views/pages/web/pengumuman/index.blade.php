@@ -6,11 +6,11 @@
         <div class="auto-container">
             <div class="content-box">
                 <div class="title centred">
-                    <h1>Blog Grid View</h1>
+                    <h1>Pengumuman Desa</h1>
                 </div>
                 <ul class="bread-crumb clearfix">
                     <li><a href="index-2.html">Home</a></li>
-                    <li>Blog</li>
+                    <li>Pengumuman</li>
                 </ul>
             </div>
         </div>
@@ -31,16 +31,14 @@
                                             height="100" class="img-fluid" alt="Image">
                                     </figure>
                                     <div class="post-date">
-                                        <h3>28<span>Jan’21</span></h3>
+
                                     </div>
                                     <div class="lower-content">
                                         <div class="category"><a href="blog-2.html"><i
                                                     class="flaticon-star"></i>Pengumuman</a></div>
                                         <h3><a href="blog-details.html">{{ $pengumuman->judul }}</a></h3>
                                         <ul class="post-info clearfix">
-                                            <li><i class="far fa-user"></i><a
-                                                    href="blog-2.html">{{ $pengumuman->created_by }}</a></li>
-                                            <li><i class="far fa-comment"></i><a href="blog-2.html">2 Comments</a></li>
+                                            <li><i class="far fa-user"></i><a href="blog-2.html">Admin Desa</a></li>
                                         </ul>
                                         <p
                                             style="overflow: hidden;
@@ -55,14 +53,44 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="pagination-wrapper">
+                        {{-- <div class="pagination-wrapper">
                             <ul class="pagination clearfix">
                                 <li><a href="blog-2.html"><i class="far fa-angle-double-left"></i></a></li>
                                 <li><a href="blog-2.html" class="current">1</a></li>
                                 <li><a href="blog-2.html">2</a></li>
                                 <li><a href="blog-2.html"><i class="far fa-angle-double-right"></i></a></li>
                             </ul>
+                        </div> --}}
+                        <div class="pagination-wrapper">
+                            <ul class="pagination clearfix">
+                                <li>{{ $pengumumans->links() }}</li>
+                            </ul>
                         </div>
+                        {{-- <div class="pagination-wrapper">
+                            <ul class="pagination clearfix">
+                                <li>
+                                    @if ($pengumumans->onFirstPage())
+                                <li><a class="disabled"><i class="far fa-angle-double-left"></i></a></li>
+                                <li><a class="current disabled">1</a></li>
+                            @else
+                                <li><a href="{{ $pengumumans->previousPageUrl() }}"><i
+                                            class="far fa-angle-double-left"></i></a></li>
+                                @endif
+                                </li>
+
+                                <li>
+                                    @if ($pengumumans->hasMorePages())
+                                <li><a href="{{ $pengumumans->nextPageUrl() }}">2</a></li>
+                                <li><a href="{{ $pengumumans->nextPageUrl() }}"><i
+                                            class="far fa-angle-double-right"></i></a></li>
+                            @else
+                                <li><a href="{{ $pengumumans->previousPageUrl() }}">1</a></li>
+                                <li><a class="current disabled">2</a></li>
+                                <li><a class="disabled"><i class="far fa-angle-double-right"></i></a></li>
+                                @endif
+                                </li>
+                            </ul>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
@@ -82,61 +110,64 @@
                             </div>
                             <div class="widget-content">
                                 <ul class="category-list clearfix">
-                                    <li><a href="blog-details.html">Announcement<span>(10)</span></a></li>
-                                    <li><a href="blog-details.html">Education<span>(06)</span></a></li>
-                                    <li><a href="blog-details.html">Opportunities<span>(12)</span></a></li>
-                                    <li><a href="blog-details.html">Public Information<span>(14)</span></a></li>
-                                    <li><a href="blog-details.html">Regeneration<span>(05)</span></a></li>
-                                    <li><a href="blog-details.html">Tourist Guide<span>(09)</span></a></li>
+                                    <li><a
+                                            href="{{ url('pengumumandesa') }}">Pengumuman<span><?php
+                                            $countPengumuman = App\Models\Pengumuman::count();
+                                            echo '(' . $countPengumuman . ')';
+                                            ?></span></a>
+                                    </li>
+                                    <li><a href="{{ url('beritadesa') }}">Berita<span><?php
+                                    $countBerita = App\Models\Berita::count();
+                                    echo '(' . $countBerita . ')';
+                                    ?></span></a></li>
+                                    <li><a href="{{ url('galeridesa') }}">Galeri<span><?php
+                                    $countGaleri = App\Models\Galeri::count();
+                                    echo '(' . $countGaleri . ')';
+                                    ?></span></a></li>
+                                    <li><a href="{{ url('hasiltani') }}">Hasil
+                                            Pertanian<span><?php
+                                            $countHasiltani = App\Models\Hasiltani::count();
+                                            echo '(' . $countHasiltani . ')';
+                                            ?></span></a>
+                                    </li>
+                                    <li><a href="{{ url('perangkatdesa') }}">Perangkat
+                                            Desa<span><?php
+                                            $countPerangkat = App\Models\Perangkat::count();
+                                            echo '(' . $countPerangkat . ')';
+                                            ?></span></a></li>
+                                    <li><a href="{{ url('barang') }}">Peminjaman<span><?php
+                                    $countBarang = App\Models\Barang::count();
+                                    echo '(' . $countBarang . ')';
+                                    ?></span></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="sidebar-widget post-widget">
                             <div class="widget-title">
-                                <h3>Popular Post</h3>
+                                <h3>Berita Populer</h3>
                             </div>
                             <div class="widget-content">
-                                <div class="post">
-                                    <figure class="post-thumb"><a href="blog-details.html"><img
-                                                src="assets/images/news/post-1.jpg" alt=""></a></figure>
-                                    <h6><a href="blog-details.html">Make Your Festive Season Zero-Waste</a></h6>
-                                    <p><i class="far fa-calendar"></i>Jan 10, 2021</p>
-                                </div>
-                                <div class="post">
-                                    <figure class="post-thumb"><a href="blog-details.html"><img
-                                                src="assets/images/news/post-2.jpg" alt=""></a></figure>
-                                    <h6><a href="blog-details.html">City Council Commits to Green New Deal</a></h6>
-                                    <p><i class="far fa-calendar"></i>Dec 26, 2020</p>
-                                </div>
-                                <div class="post">
-                                    <figure class="post-thumb"><a href="blog-details.html"><img
-                                                src="assets/images/news/post-3.jpg" alt=""></a></figure>
-                                    <h6><a href="blog-details.html">Moves to Third Step Towards COVID Normal</a></h6>
-                                    <p><i class="far fa-calendar"></i>Dec 05, 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sidebar-widget archives-widget">
-                            <div class="widget-title">
-                                <h3>Archives</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="select-box">
-                                    <div class="icon-box"><i class="far fa-calendar"></i></div>
-                                    <select class="wide">
-                                        <option data-display="November 2020">November 2020</option>
-                                        <option value="1">Nov 2019</option>
-                                        <option value="2">Oct 2019</option>
-                                        <option value="3">Sep 2019</option>
-                                        <option value="4">Aug 2019</option>
-                                    </select>
-                                </div>
-                            </div>
+                                @php
+                                    $counter = 0;
+                                @endphp
+                                @foreach ($berita as $item)
+                                    @php
+                                        $counter++;
+                                    @endphp
+                                    <div class="post">
+                                        <figure class="post-thumb"><a href="{{ url('beritadesa') }}"><img
+                                                    src="/images/berita/{{ $item->avatar }}" alt="avatar"></a></figure>
+                                        <h6><a href="{{ url('beritadesa') }}">{{ $item->judul }}</a></h6>
+                                    </div>
+                                    @if ($counter >= 3)
+                                    @break
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
 @endsection

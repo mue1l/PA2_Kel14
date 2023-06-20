@@ -25,5 +25,5 @@
 
     <title>Sistem Informasi Desa Sipahutar</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/fav-icon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logosipahutar.jpg') }}">
 </head>

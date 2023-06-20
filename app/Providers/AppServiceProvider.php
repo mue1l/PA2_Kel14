@@ -2,13 +2,14 @@
 
 namespace App\Providers;
 
-use App\Models\pembayarandaftar;
 use App\Models\Peminjaman;
 use App\Models\Pendaftaran;
 use App\Models\Requestsurat;
-use Illuminate\Support\Facades\Validator;
+use App\Models\pembayarandaftar;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Validator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrapFour();
+
         view()->composer('theme.app.header', function ($view) {
             if (Auth::check()) {
                 $notif = Peminjaman::where('user_id', auth()->user()->id)->get();
@@ -39,7 +42,14 @@ class AppServiceProvider extends ServiceProvider
 
                 $all_notif = $notif->concat($notifikasi)->concat($pendaftaran)->concat($pembayaran)->sortByDesc('updated_at');
                 // $view->with('notifikasi', $notifikasi);
-                $view->with('all_notif', $all_notif);
+                $newNotificationsPeminjaman = Peminjaman::whereNotNull('pemberitahuan')->count();
+                $newNotificationsRequestsurat = Requestsurat::whereNotNull('pemberitahuan')->count();
+                $newNotificationsPembayarandaftar = Pembayarandaftar::whereNotNull('pemberitahuan')->count();
+                $newNotificationsPendaftaran = Pendaftaran::whereNotNull('pemberitahuan')->count();
+
+                $totalNewNotifications = $newNotificationsPeminjaman + $newNotificationsRequestsurat + $newNotificationsPembayarandaftar + $newNotificationsPendaftaran;
+                $view->with('all_notif', $all_notif)
+                    ->with('totalNewNotifications', $totalNewNotifications);
             }
         });
     }

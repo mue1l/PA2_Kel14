@@ -6,6 +6,7 @@ use stdClass;
 use App\Models\Pendaftaran;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Berita;
 use App\Models\pengaturanpendaftaran;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,10 +26,11 @@ class PendaftaranController extends Controller
 
 
 
-        $statusPendaftaran = Pengaturanpendaftaran::first()->status_pendaftaran; // Gantilah dengan fungsi untuk mendapatkan status pendaftaran, misalnya dari database
+        $statusPendaftaran = Pengaturanpendaftaran::first()->status_pendaftaran;
+        $berita = Berita::all();
         // dd($statusPendaftaran);
         if ($statusPendaftaran === 'buka') {
-            return view('pages.web.pendaftaran.create', compact('pendaftaran'));
+            return view('pages.web.pendaftaran.create', compact('pendaftaran', 'berita'));
         } else {
             return view('pages.web.pendaftaran.close');
         }
@@ -44,20 +46,28 @@ class PendaftaranController extends Controller
         if ($jumlahPendaftar >= 50) {
             return redirect()->route('pendaftaran.index')->with('error', 'Maaf, kuota pendaftaran sudah penuh.');
         }
+
+        $umur = (int) $request->input('umur');
+
+        if ($umur < 5 || $umur > 7) {
+            return redirect()->back()->withErrors(['umur' => 'Umur harus di antara 5 dan 7 tahun'])->withInput();
+        }
+
         // dd($request->all());
         $request->validate([
             'nama_anak' => 'required',
             'tanggal_lahir' => 'required',
-            'umur' => 'required|min:5|max:7',
+            'umur' => 'required|numeric',
             'jenis_kelamin' => 'required',
             'nama_orangtua' => 'required',
             'alamat' => 'required',
-            'avatar' => 'required|image|mimes:png|max:2048',
+            'avatar' => 'required|image|mimes:jpg,png|max:2048',
         ], [
             'avatar.mimes' => 'Gambar harus berformat JPG atau PNG',
             'umur.min' => 'Umur minimal 5 tahun',
             'umur.max' => 'Umur maksimal 7 tahun',
         ]);
+
 
         $pendaftaran = new Pendaftaran();
         $pendaftaran->user_id = Auth::user()->id;
@@ -69,6 +79,8 @@ class PendaftaranController extends Controller
         $pendaftaran->alamat = $request->alamat;
         $pendaftaran->pemberitahuan = $request->pemberitahuan;
         $pendaftaran->status = 'menunggu';
+
+
 
 
         $path = public_path('images/pendaftaran');

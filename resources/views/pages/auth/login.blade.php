@@ -24,9 +24,9 @@
                                     <div class="col-11 col-sm-10 col-lg-9 mx-auto text-center">
                                         <h1 class="text-5 fw-400 text-white mb-5">Selamat datang di</h1>
                                         <div class="logo mt-5 mb-3">
-                                            <img src="{{ asset('assets/images/logosidesi.png') }}" alt="sipahutar">
+                                            <img src="{{ asset('assets/images/sidesilogo.png') }}" alt="sipahutar">
                                         </div>
-                                        <h2 class="text-white line-height-3 mb-5">Website Desa Sipahutar</h2>
+                                        <h2 class="text-white line-height-3 mb-5">Sistem Informasi Desa Sipahutar</h2>
                                     </div>
                                 </div>
                             </div>
@@ -84,9 +84,6 @@
                                                         type="submit">Masuk</button>
                                                 </div>
                                             </form>
-                                            <p class="text-center">Butuh mencari akun anda? <a
-                                                    href="forgot-password-5.html"><u>Username anda</u></a> or <a
-                                                    href="https://harnishdesign.net/"><u>Password anda</u></a>?</p>
                                         </div>
                                     </div>
                                 </div>

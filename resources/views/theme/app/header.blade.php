@@ -44,29 +44,9 @@
                     <div class="content-inner">
                         <div class="content-box">
                             <h4>Notifikasi</h4>
-                            <h6>hallooo</h6>
                             <form class="booking-form">
                                 <div class="form-group">
                                     @auth
-                                        <div class="notif-icon"
-                                            style="position: relative;
-                                        display: inline-block;">
-                                            <i class="fas fa-bell"></i>
-                                            @if (count($all_notif) > 0)
-                                            <span class="notif-badge"
-                                            style="position: absolute;
-                                        top: -8px;
-                                        right: -8px;
-                                        width: 20px;
-                                        height: 20px;
-                                        background-color: red;
-                                        color: white;
-                                        font-size: 12px;
-                                        line-height: 20px;
-                                        text-align: center;
-                                        border-radius: 50%;">+</span>
-                                            @endif
-                                        </div>
                                         @foreach ($all_notif as $item)
                                             <div class="border border-success px-3 py-4">
                                                 <h6 class="text-light">
@@ -81,12 +61,14 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+    @auth
+        @if (count($all_notif) > 0)
+            <span class="notification-badge"></span>
+        @endif
+    @endauth
 </div>
-</div>
-<!-- END sidebar widget item -->
 
 
 <!-- main header -->
@@ -142,7 +124,7 @@
                                                 Desa</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Layanan Pustaka</a>
+                                <li class="dropdown"><a href="#">Layanan Desa</a>
                                     <ul>
                                         <li><a href="{{ url('requestsurat') }}">Request Surat</a></li>
                                         <li class="dropdown"><a href="#">Pendidikan</a>
@@ -177,7 +159,16 @@
                         </div>
                         <ul class="other-option clearfix">
                             <li class="nav-box">
-                                <div class="nav-toggler navSidebar-button"><i data-feather="bell"></i></div>
+                                <div class="nav-toggler navSidebar-button">
+
+                                    <div class="circle">
+                                        @auth
+                                            {{ $totalNewNotifications }}
+
+                                        @endauth
+                                        <i data-feather="bell"></i>
+                                    </div>
+                                </div>
                             </li>
                             <li class="search-btn">
                                 <button type="button" class="search-toggler"><i data-feather="user"></i></button>
@@ -224,7 +215,7 @@
                                                 Desa</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Layanan Pustaka</a>
+                                <li class="dropdown"><a href="#">Layanan Desa</a>
                                     <ul>
                                         <li><a href="{{ url('requestsurat') }}">Request Surat</a></li>
                                         <li class="dropdown"><a href="#">Pendidikan</a>
@@ -264,7 +255,6 @@
                             <li class="search-btn">
                                 <button type="button" class="search-toggler"><i data-feather="user"></i></button>
                             </li>
-
                         </ul>
                     </div>
                 </div>

@@ -34,7 +34,8 @@
                     <div class="col-lg-8 col-md-12 col-sm-12 inner-column">
                         <div class="inner-box">
                             <div class="single-item style-one">
-                                <figure class="image-box"><img src="{{ asset('assets/images/profil2.jpg') }}"alt="">
+                                <figure class="image-box"><img
+                                        src="{{ asset('assets/file/Pemandangan desa/bg1.jpg') }}"alt="">
                                 </figure>
                                 <div class="text">
                                     <span>SIPAHUTAR</span>
@@ -62,7 +63,7 @@
                             </div>
                             <div class="single-item style-two text-right">
                                 <figure class="image-box"><img style="width: 6000px; height: 400px;"
-                                        src="{{ asset('assets/images/profil6.png') }}"alt="">
+                                        src="{{ asset('assets/images/peta.png') }}"alt="">
                                 </figure>
                                 <div class="text">
                                     <span>SIPAHUTAR</span>

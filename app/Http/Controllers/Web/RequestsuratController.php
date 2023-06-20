@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Berita;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Requestsurat;
 
@@ -25,9 +26,10 @@ class RequestsuratController extends Controller
 
     public function show(Requestsurat $request_surat)
     {
+        $berita = Berita::all();
 
         $request_surat = Requestsurat::all();
-        return view('pages.web.requestsurat.create', compact('request_surat'));
+        return view('pages.web.requestsurat.create', compact('request_surat', 'berita'));
     }
 
     public function storeRequestsurat(Request $request)

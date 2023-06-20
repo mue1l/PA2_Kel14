@@ -42,16 +42,21 @@ class PembayarandaftarController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login')->with('loginError', 'Silahkan login terlebih dahulu sebelum melakukan pendaftaran!');;
         }
+        $umur = (int) $request->input('umur');
+
+        if ($umur < 5 || $umur > 7) {
+            return redirect()->back()->withErrors(['umur' => 'Umur harus di antara 5 dan 7 tahun'])->withInput();
+        }
         // dd($request);
         // Validate the request data
         $request->validate([
             'nama_anak' => 'required|string',
             'tanggal_lahir' => 'required|string',
-            'umur' => 'required|string|min:5|max:7',
+            'umur' => 'required|numeric',
             'jenis_kelamin' => 'required',
             'nama_orangtua' => 'required|string',
             'alamat' => 'required|string',
-            'image' => 'required|image|mimes:png|max:2048',
+            'image' => 'required|image|mimes:jpg,png|max:2048',
         ], [
             'image.mimes' => 'Gambar harus berformat JPG atau PNG',
             'umur.min' => 'Umur minimal 5 tahun',

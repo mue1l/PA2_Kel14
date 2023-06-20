@@ -32,30 +32,30 @@
                                 <label for="exampleInputUsername1" class="form-label">Nama
                                     anak</label>
                                 <input type="text" class="form-control" id="exampleInputUsername1" autocomplete="off"
-                                    name="nama_anak" placeholder="{{ $rekapan->nama_anak }}">
+                                    name="nama_anak" placeholder="{{ $pembayarandaftar->nama_anak }}">
                             </div>
                             <div class="mb-3">
-                                < for="exampleInputEmail1" class="form-label">Tanggal lahir</  label>
-                                <input type="date" class="form-control" id="exampleInputEmail1" name="tanggal_lahir">
+                                <label for="exampleInputEmail1" class="form-label">Tanggal lahir</label>
+                                <input type="date" placeholder="{{ $pembayarandaftar->tanggal_lahir }}" class="form-control" id="exampleInputEmail1" name="tanggal_lahir">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Umur Anak</label>
-                                <input type="number" class="form-control" id="exampleInputEmail1" name="umur">
+                                <input type="number" placeholder="{{ $pembayarandaftar->umur }}" class="form-control" id="exampleInputEmail1" name="umur">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" name="jenis_kelamin">
+                                <input type="text" class="form-control" placeholder="{{ $pembayarandaftar->jenis_kelamin }}" id="exampleInputEmail1" name="jenis_kelamin">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputUsername1" class="form-label">Nama
                                     Orang Tua</label>
                                 <input type="text" class="form-control" id="exampleInputUsername1" autocomplete="off"
-                                    name="nama_orangtua">
+                                    name="nama_orangtua" placeholder="{{ $pembayarandaftar->jenis_kelamin }}">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputUsername1" class="form-label">Alamat</label>
                                 <input type="textarea" class="form-control" id="exampleInputUsername1" autocomplete="off"
-                                    name="alamat">
+                                    name="alamat" >
                             </div>
 
                             <button type="submit" class="btn btn-primary me-2">Kirim</button>

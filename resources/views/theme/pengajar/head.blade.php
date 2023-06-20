@@ -7,7 +7,7 @@
     <meta name="keywords"
         content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-    <title>NobleUI - HTML Bootstrap 5 Admin Dashboard Template</title>
+    <title>Pengajar Desa Sipahutar</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="{{ asset('https://fonts.googleapis.com/') }}">
@@ -31,6 +31,6 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/css/style.min.css') }}">
     <!-- End layout styles -->
 
-    <link rel="shortcut icon" href="{{ asset('assets/admin/images/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logosipahutar.jpg') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/tombol-selengkapnya.css') }}" />
 </head>

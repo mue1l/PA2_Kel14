@@ -2,7 +2,7 @@
 @section('title', 'login')
 @section('content')
 
-    <section class="page-title" style="background-image:url('{{ asset('assets/images/bg(1).jpg') }}');">
+    <section class="page-title" style="background-image:url('{{ asset('assets/file/PAUD DESA/paudbg.jpg') }}');">
         <div class="auto-container">
             <div class="content-box">
                 <div class="title centred">
@@ -37,14 +37,15 @@
                         @endforeach --}}
 
                         <br>
-                        <h4>Silahkan melakukan pendaftaran pada formulir dibawah ini</h4>
+
                         <br>
                         <div class="row clearfix">
                             <div class="col-lg-4 col-md-12 col-sm-12 small-column">
-                                <div class="content_block_10">
-                                    <div class="content-box" style="width: 400px;">
+                                <div class="content_block_10" style="width:800px;">
+                                    <div class="content-box" style="width: 600px;">
                                         <div class="text">
                                             <h3>Pendaftaran</h3>
+                                            <p><i>Silahkan melakukan pendaftaran pada formulir dibawah ini</i></p>
                                             @if (session()->has('success'))
                                                 <div class="alert alert-success">
                                                     {{ session()->get('success') }}
@@ -125,68 +126,70 @@
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="blog-sidebar">
                         <div class="sidebar-widget category-widget">
+                            <br><br><br><br><br><br><br><br><br><br><br>
                             <div class="widget-title">
                                 <h3>Categories</h3>
                             </div>
                             <div class="widget-content">
                                 <ul class="category-list clearfix">
-                                    <li><a href="blog-details.html">Announcement<span>(10)</span></a></li>
-                                    <li><a href="blog-details.html">Education<span>(06)</span></a></li>
-                                    <li><a href="blog-details.html">Opportunities<span>(12)</span></a></li>
-                                    <li><a href="blog-details.html">Public Information<span>(14)</span></a></li>
-                                    <li><a href="blog-details.html">Regeneration<span>(05)</span></a></li>
-                                    <li><a href="blog-details.html">Tourist Guide<span>(09)</span></a></li>
+                                    <li><a href="{{ url('pengumumandesa') }}">Pengumuman<span><?php
+                                    $countPengumuman = App\Models\Pengumuman::count();
+                                    echo '(' . $countPengumuman . ')';
+                                    ?></span></a>
+                                    </li>
+                                    <li><a href="{{ url('beritadesa') }}">Berita<span><?php
+                                    $countBerita = App\Models\Berita::count();
+                                    echo '(' . $countBerita . ')';
+                                    ?></span></a></li>
+                                    <li><a href="{{ url('galeridesa') }}">Galeri<span><?php
+                                    $countGaleri = App\Models\Galeri::count();
+                                    echo '(' . $countGaleri . ')';
+                                    ?></span></a></li>
+                                    <li><a href="{{ url('hasiltani') }}">Hasil
+                                            Pertanian<span><?php
+                                            $countHasiltani = App\Models\Hasiltani::count();
+                                            echo '(' . $countHasiltani . ')';
+                                            ?></span></a>
+                                    </li>
+                                    <li><a href="{{ url('perangkatdesa') }}">Perangkat
+                                            Desa<span><?php
+                                            $countPerangkat = App\Models\Perangkat::count();
+                                            echo '(' . $countPerangkat . ')';
+                                            ?></span></a></li>
+                                    <li><a href="{{ url('barang') }}">Peminjaman<span><?php
+                                    $countBarang = App\Models\Barang::count();
+                                    echo '(' . $countBarang . ')';
+                                    ?></span></a></li>
                                 </ul>
                             </div>
                         </div>
-                        {{-- <div class="sidebar-widget post-widget">
+                        <div class="sidebar-widget post-widget">
                             <div class="widget-title">
-                                <h3>Popular Post</h3>
+                                <h3>Berita Populer</h3>
                             </div>
                             <div class="widget-content">
-                                <div class="post">
-                                    <figure class="post-thumb"><a href="blog-details.html"><img
-                                                src="assets/images/news/post-1.jpg" alt=""></a></figure>
-                                    <h6><a href="blog-details.html">Make Your Festive Season Zero-Waste</a></h6>
-                                    <p><i class="far fa-calendar"></i>Jan 10, 2021</p>
-                                </div>
-                                <div class="post">
-                                    <figure class="post-thumb"><a href="blog-details.html"><img
-                                                src="assets/images/news/post-2.jpg" alt=""></a></figure>
-                                    <h6><a href="blog-details.html">City Council Commits to Green New Deal</a></h6>
-                                    <p><i class="far fa-calendar"></i>Dec 26, 2020</p>
-                                </div>
-                                <div class="post">
-                                    <figure class="post-thumb"><a href="blog-details.html"><img
-                                                src="assets/images/news/post-3.jpg" alt=""></a></figure>
-                                    <h6><a href="blog-details.html">Moves to Third Step Towards COVID Normal</a>
-                                    </h6>
-                                    <p><i class="far fa-calendar"></i>Dec 05, 2020</p>
-                                </div>
-                            </div>
+                                @php
+                                    $counter = 0;
+                                @endphp
+                                @foreach ($berita as $item)
+                                    @php
+                                        $counter++;
+                                    @endphp
+                                    <div class="post">
+                                        <figure class="post-thumb"><a href="{{ url('beritadesa') }}"><img
+                                                    src="/images/berita/{{ $item->avatar }}" alt="avatar"></a></figure>
+                                        <h6><a href="{{ url('beritadesa') }}">{{ $item->judul }}</a></h6>
+                                    </div>
+                                    @if ($counter >= 3)
+                                    @break
+                                @endif
+                            @endforeach
                         </div>
-                        <div class="sidebar-widget archives-widget">
-                            <div class="widget-title">
-                                <h3>Archives</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="select-box">
-                                    <div class="icon-box"><i class="far fa-calendar"></i></div>
-                                    <select class="wide">
-                                        <option data-display="November 2020">November 2020</option>
-                                        <option value="1">Nov 2019</option>
-                                        <option value="2">Oct 2019</option>
-                                        <option value="3">Sep 2019</option>
-                                        <option value="4">Aug 2019</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+</section>
 
 
 @endsection

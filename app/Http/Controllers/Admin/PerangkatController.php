@@ -42,12 +42,12 @@ class PerangkatController extends Controller
             'name' => 'required',
             'position' => 'required',
             'address' => 'required',
-            'avatar' => 'required'
+            'avatar' => 'requiredimage|mimes:jpg,png'
         ]);
 
-        $path = public_path(',00t');
+        $path = public_path('images/perangkat/');
         $avatar = $request->file('avatar');
-        $avatar_name = $avatar->getClientOriginalName();
+        $avatar_name = time() . $avatar->getClientOriginalName();
         $avatar->move($path, $avatar_name);
 
         Perangkat::create([

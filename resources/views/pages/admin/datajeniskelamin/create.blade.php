@@ -5,8 +5,7 @@
 
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+
             </ol>
         </nav>
 
@@ -23,18 +22,18 @@
                             <div class="mb-3">
                                 <label for="exampleFormControlSelect1" class="form-label">Pilih Jenis Kelamin</label>
                                 <select class="form-select" name="jenis_kelamin"
-                                    class="form-control @error('jenis_kelamin') is-invalid @enderror" id="exampleFormControlSelect1"
-                                    value="{{ old('jenis_kelamin') }}">
+                                    class="form-control @error('jenis_kelamin') is-invalid @enderror"
+                                    id="exampleFormControlSelect1" value="{{ old('jenis_kelamin') }}">
                                     <option selected disabled>Pilih Jenis Kelamin</option>
                                     <option>Laki-laki</option>
                                     <option>Perempuan</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Jumlah penduduk</label>
+                                <label class="form-label">Jumlah penduduk sesuai gender</label>
                                 <input type="number" name="jumlah"
                                     class="form-control @error('jumlah') is-invalid @enderror"
-                                    placeholder="Masukkan Jumlah Penduduk" value="{{ old('jumlah') }}">
+                                    placeholder="Masukkan Jumlah penduduk sesuai gender" value="{{ old('jumlah') }}">
                             </div>
                             @error('jumlah')
                                 <span class="alert alert-danger">

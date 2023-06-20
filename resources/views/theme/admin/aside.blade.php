@@ -90,12 +90,12 @@
                     <span class="link-title">Request Surat</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="{{ url('#') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title">Pendidikan</span>
-                </a>
-            </li>
+                {{-- <li class="nav-item">
+                    <a href="{{ url('#') }}" class="nav-link">
+                        <i class="link-icon" data-feather="box"></i>
+                        <span class="link-title">Pendidikan</span>
+                    </a>
+                </li> --}}
 
             <li class="nav-item nav-category">Informasi Publik</li>
             <li class="nav-item">

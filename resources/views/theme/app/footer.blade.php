@@ -10,12 +10,11 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        {{-- <li><a href="departments.html">All Departments</a></li>
-                                        <li><a href="police-crime.html">Policing & Crime</a></li>
-                                        <li><a href="trasport-traffic.html">Trasport & Traffic</a></li>
-                                        <li><a href="housing-land.html">Housing & Land</a></li>
-                                        <li><a href="health-medical.html">Health & Medical</a></li>
-                                        <li><a href="arts-culture.html">Arts & Culture</a></li> --}}
+                                        <li><a href="{{ url('pengumumandesa') }}">Pengumuman</a></li>
+                                        <li><a href="{{ url('beritadesa') }}">Berita</a></li>
+                                        <li><a href="{{ url('galeridesa') }}">Galeri</a></li>
+                                        <li><a href="{{ url('hasiltani') }}">Hasil Tani</a></li>
+                                        <li><a href="{{ url('profildesa') }}">Profil Desa</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -27,12 +26,8 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        {{-- <li><a href="index-2.html">Administration</a></li>
-                                        <li><a href="index-2.html">Financial Services</a></li>
-                                        <li><a href="index-2.html">Fire Services</a></li>
-                                        <li><a href="index-2.html">Library</a></li>
-                                        <li><a href="index-2.html">Police</a></li>
-                                        <li><a href="index-2.html">Public</a></li> --}}
+                                        Desa Sipahutar Kec.Sipoholon. Kab.Tapanuli Utara-SUMUT
+
                                     </ul>
                                 </div>
                             </div>
@@ -40,22 +35,12 @@
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget contact-widget">
                                 <div class="widget-title">
-                                    <h3>Contact Info</h3>
+                                    <h3>Info Kontak</h3>
                                 </div>
                                 <div class="widget-content">
                                     <ul class="info clearfix">
-                                        {{-- <li>
-                                            <h5>Location</h5>
-                                            <p>46, The queen’s walk Street, <br />San Antonio 78154.</p>
-                                        </li>
-                                        <li>
-                                            <h5>Phone</h5>
-                                            <p><a href="tel:448881234546">+44 888 12 345 46</a></p>
-                                        </li>
-                                        <li>
-                                            <h5>Email</h5>
-                                            <p><a href="mailto:info@example.com">info@example.com</a></p>
-                                        </li> --}}
+                                        Telepon: ++6281361560416
+                                        email  : mail@desa.id
                                     </ul>
                                 </div>
                             </div>
@@ -67,7 +52,7 @@
                 <div class="auto-container">
                     <div class="bottom-inner clearfix">
                         <div class="copyright pull-left">
-                            <p>&copy; 2023 By <a href="#">Desa Sipahutar.</a> </p>
+                            <p>&copy; 2023 By <a href="#">PA 2 Kel.14</a> </p>
                         </div>
 
                     </div>

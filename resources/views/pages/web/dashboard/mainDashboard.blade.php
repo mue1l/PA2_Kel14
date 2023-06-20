@@ -13,7 +13,7 @@
                             <h1>VISI DESA</h1>
                             <p>{{ $item->visi }}</p>
                             <div class="btn-box">
-                                <a href="{{ url('/profildesa') }}" class="theme-btn">Read More</a>
+                                <a href="{{ url('/profildesa') }}" class="theme-btn">Baca selengkapnya</a>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                             text-overflow: ellipsis;">
                                 {{ $item->misi }}</p>
                             <div class="btn-box">
-                                <a href="{{ url('/profildesa') }}" class="theme-btn">Read More</a>
+                                <a href="{{ url('/profildesa') }}" class="theme-btn">Baca selengkapnya</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                             <h1>TENTANG DESA</h1>
                             <p>{{ $item->tentang }}</p>
                             <div class="btn-box">
-                                <a href="{{ url('/profildesa') }}" class="theme-btn">Read More</a>
+                                <a href="{{ url('/profildesa') }}" class="theme-btn">Baca selengkapnya</a>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                         <div class="image_block_1">
                             <div class="image-box">
                                 <figure class="image"><img style="height:700px; width: 700px;"
-                                        src="{{ asset('assets/images/profil2.jpg') }}" alt="">
+                                        src="{{ asset('assets/images/bg8.jpg') }}" alt="">
                                 </figure>
 
                             </div>
@@ -266,6 +266,104 @@
     </div>
 </section>
 
+<section class="news-section bg-color-1">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <h6><i class="flaticon-star"></i><span>Pengumuman</span><i class="flaticon-star"></i></h6>
+            <h2>Pengumuman desa</h2>
+            <div class="title-shape"></div>
+        </div>
+        <div class="row clearfix">
+            @php
+                $counter = 0;
+            @endphp
+            @foreach ($pengumuman as $item)
+                @php
+                    $counter++;
+                @endphp
+                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                    <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                        data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image">
+                                    <a href="{{ url('pengumumandesa') }}"><i class="fas fa-link"></i></a>
+                                    <img src="/images/pengumuman/{{ $item->avatar }}" alt="avatar">
+                                </figure>
+                                {{-- <div class="post-date">
+                                    <h3>28<span>Jan’21</span></h3>
+                                </div> --}}
+                            </div>
+                            <div class="lower-content">
+                                <div class="category"><a href="#"><i class="flaticon-star"></i>Pengumuman</a>
+                                </div>
+                                <h4><a href="{{ url('pengumumandesa') }}">{{ $item->judul }}</a>
+                                </h4>
+                                <ul class="post-info clearfix">
+                                    <li><a href="{{ url('pengumumandesa') }}"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if ($counter >= 3)
+                @break
+            @endif
+        @endforeach
+    </div>
+</div>
+</section>
+
+<section class="news-section bg-color-1">
+<div class="auto-container">
+    <div class="sec-title centred">
+        <h6><i class="flaticon-star"></i><span>Berita</span><i class="flaticon-star"></i></h6>
+        <h2>Berita desa</h2>
+        <div class="title-shape"></div>
+    </div>
+    <div class="row clearfix">
+        @php
+            $counter = 0;
+        @endphp
+        @foreach ($berita as $item)
+            @php
+                $counter++;
+            @endphp
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
+                    data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image">
+                                <a href="{{ url('beritadesa') }}"><i class="fas fa-link"></i></a>
+                                <img src="/images/berita/{{ $item->avatar }}" alt="avatar">
+                            </figure>
+                            {{-- <div class="post-date">
+                                    <h3>28<span>Jan’21</span></h3>
+                                </div> --}}
+                        </div>
+                        <div class="lower-content">
+                            <div class="category"><a href="#"><i class="flaticon-star"></i>Pengumuman</a>
+                            </div>
+                            <h4><a href="{{ url('pengumumandesa') }}">{{ $item->judul }}</a>
+                            </h4>
+                            <ul class="post-info clearfix">
+                                <li><a href="{{ url('beritadesa') }}"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if ($counter >= 3)
+            @break
+        @endif
+    @endforeach
+</div>
+</div>
+</section>
+
+
 
 <!-- schedules-section -->
 {{-- <section class="schedules-section sec-pad bg-color-1">
@@ -276,7 +374,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 title-column">
                     <div class="sec-title light">
                         <h6><i class="flaticon-star"></i><span>Sipahutar</span></h6>
-                        <h2>Pengumuman & Berita Desa</h2>
+                        <h2>berita & Berita Desa</h2>
                         <div class="title-shape"></div>
                     </div>
                 </div>
@@ -327,7 +425,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="lower-content">
-                                                    <div class="links"><a href="event-details.html">Read More<i
+                                                    <div class="links"><a href="event-details.html">Baca selengkapnya<i
                                                                 class="flaticon-right-arrow"></i></a></div>
                                                 </div>
                                             </div>
@@ -358,7 +456,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="lower-content">
-                                                    <div class="links"><a href="event-details.html">Read More<i
+                                                    <div class="links"><a href="event-details.html">Baca selengkapnya<i
                                                                 class="flaticon-right-arrow"></i></a></div>
                                                 </div>
                                             </div>
@@ -376,107 +474,109 @@
 </section> --}}
 <!-- schedules-section end -->
 
-<!-- team-section -->
 <section class="team-section sec-pad bg-color-1">
-    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-5.png);"></div>
-    <div class="auto-container">
-        <div class="sec-title">
-            <h6><i class="flaticon-star"></i><span>Perangkat Desa</span></h6>
-            <h2>Perangkat Desa</h2>
-            <div class="title-shape"></div>
-            <a href="index-2.html" class="theme-btn">Semua Perangkat</a>
-        </div>
-        <div class="row clearfix">
-            @foreach ($perangkat as $item)
-                <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="00ms"
-                        data-wow-duration="1500ms">
-                        <div class="inner-box">
-                            <figure class="image-box"><a href="index-2.html"><img
-                                        src="/images/perangkat/{{ $item->avatar }}" alt=""></a></figure>
-                            <div class="lower-content">
-                                <div class="author-box">
-                                    <h4><a href="index-2.html">{{ $item->name }}</a></h4>
-                                    <span class="designation">{{ $item->posisition }}</span>
-                                </div>
-                            </div>
+<div class="pattern-layer" style="background-image: url(assets/images/shape/shape-5.png);"></div>
+<div class="auto-container">
+<div class="sec-title">
+    <h6><i class="flaticon-star"></i><span>Desa Sipahutar</span></h6>
+    <h2>Perangkat Desa Sipahutar</h2>
+    <div class="title-shape"></div>
+
+</div>
+<div class="row clearfix">
+    @php
+        $counter = 0;
+    @endphp
+    @foreach ($perangkat as $perangkat)
+        @php
+            $counter++;
+        @endphp
+        <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+            <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="200ms"
+                data-wow-duration="1500ms">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="">
+                            <img src="{{ asset('images/perangkat/' . $perangkat->avatar) }}"
+                                alt="{{ $perangkat->avatar }}"></a>
+                    </figure>
+                    <div class="lower-content">
+                        <div class="author-box">
+                            <h4 style="font-family: Montserrat"><a
+                                    href="index-2.html">{{ $perangkat->name }}</a></h4>
+                            <span class="designation"
+                                style="font-family: Montserrat">{{ $perangkat->position }}</span>
                         </div>
+                        <ul class="othre-info clearfix">
+                            <p style="text-align: center"> Alamat : {{ $perangkat->address }}</p>
+                        </ul>
                     </div>
                 </div>
-            @endforeach
-
-
+            </div>
         </div>
-    </div>
+        @if ($counter >= 4)
+        @break
+    @endif
+@endforeach
+</div>
+</div>
 </section>
 <!-- team-section end -->
 
 <!-- funfact-section -->
 <section class="funfact-section">
-    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-7.png);"></div>
-    <div class="auto-container">
-        <div class="funfact-content">
+<div class="pattern-layer" style="background-image: url(assets/images/shape/shape-7.png);"></div>
+<div class="auto-container">
+<div class="funfact-content">
+<div class="row clearfix">
+    <div class="col-lg-4 col-md-12 col-sm-12 title-column">
+        <div class="sec-title">
+            <h6><i class="flaticon-star"></i><span>Sipahutar</span></h6>
+            <h2>Populasi Penduduk</h2>
+            <div class="title-shape"></div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-12 col-sm-12 inner-column">
+        <div class="funfact-inner centred">
             <div class="row clearfix">
-                <div class="col-lg-4 col-md-12 col-sm-12 title-column">
-                    <div class="sec-title">
-                        <h6><i class="flaticon-star"></i><span>Interesting Facts</span></h6>
-                        <h2>City In Numbers</h2>
-                        <div class="title-shape"></div>
+                <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
+                    <div class="funfact-block-one">
+                        <div class="inner-box">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500"
+                                    data-stop="{{ $dataLakiLaki->jumlah + $dataPerempuan->jumlah }}">0</span><span></span>
+                            </div>
+                            <h6>Total Penduduk</h6>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-12 col-sm-12 inner-column">
-                    <div class="funfact-inner centred">
-                        <div class="row clearfix">
-                            <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
-                                <div class="funfact-block-one">
-                                    <div class="inner-box">
-                                        <div class="count-outer count-box">
-                                            <span class="count-text" data-speed="1500"
-                                                data-stop="45">0</span><span>k</span>
-                                        </div>
-                                        <h6>City Population</h6>
-                                    </div>
-                                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
+                    <div class="funfact-block-one">
+                        <div class="inner-box">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500"
+                                    data-stop="{{ $dataLakiLaki->jumlah }}">0</span><span></span>
                             </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
-                                <div class="funfact-block-one">
-                                    <div class="inner-box">
-                                        <div class="count-outer count-box">
-                                            <span class="count-text" data-speed="1500" data-stop="168">0</span>
-                                        </div>
-                                        <h6>Total Area in Sq.mi</h6>
-                                    </div>
-                                </div>
+                            <h6>Laki-laki</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
+                    <div class="funfact-block-one">
+                        <div class="inner-box">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500"
+                                    data-stop="{{ $dataPerempuan->jumlah }}">0</span><span></span>
                             </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
-                                <div class="funfact-block-one">
-                                    <div class="inner-box">
-                                        <div class="count-outer count-box">
-                                            <span class="count-text" data-speed="1500"
-                                                data-stop="1.5">0</span><span>M</span>
-                                        </div>
-                                        <h6>Average Revenue</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
-                                <div class="funfact-block-one">
-                                    <div class="inner-box">
-                                        <div class="count-outer count-box">
-                                            <span class="count-text" data-speed="1500"
-                                                data-stop="7">0</span><span>th</span>
-                                        </div>
-                                        <h6>Largest City in Us</h6>
-                                    </div>
-                                </div>
-                            </div>
+                            <h6>Perempuan</h6>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+</div>
+</div>
+</div>
 </section>
 <!-- funfact-section end -->
 

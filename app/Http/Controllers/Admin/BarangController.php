@@ -43,7 +43,7 @@ class BarangController extends Controller
         $request->validate([
             'nama' => 'required',
             'jumlah' => 'required',
-            'avatar' => 'required'
+            'avatar' => 'required|image|mimes:jpg,png'
         ]);
 
         $path = public_path('images/barang');

@@ -5,8 +5,7 @@
 
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+                
             </ol>
         </nav>
 
@@ -54,7 +53,7 @@
                                 </span>
                             @enderror
 
-                            
+
                             <button type="submit" class="btn btn-primary me-2">Tambah</button>
                             <a href="{{ route('admin.berita.index') }}" class="btn btn-secondary">Kembali</a>
                         </form>

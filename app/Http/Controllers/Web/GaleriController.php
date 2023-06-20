@@ -9,9 +9,13 @@ use App\Models\Galeri;
 
 class GaleriController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $galeris = Galeri::all();
+        $galeris = Galeri::where('judul', 'like', '%' . $request->search . '%')
+                                ->orWhere('deskripsi', 'like', '%' . $request->search . '%')
+                                ->orderBy('id', 'DESC')
+                                ->paginate(3);
         return view('pages.web.galeri.index', compact('galeris'));
     }
 

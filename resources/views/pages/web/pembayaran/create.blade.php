@@ -137,6 +137,9 @@
                                     <h3 style="color: rgb(0, 0, 125);"><b>Nama BANK : {{ $item->nama_bank }}</b></h3>
                                     <h4 style="color: rgb(173, 0, 0)"><b>No. Rekening: {{ $item->no_rekening }}</b></h4>
                                     <h6><b>Batas pembayaran : {{ $item->batas_pembayaran }}</b></h6>
+                                    <br>
+                                    <h4>Uang pendaftaran :</h4>
+                                    <h4 style="color:gold">Rp50.000</h4>
                                 @endforeach
                                 <div class="title-shape"></div>
                             </div>

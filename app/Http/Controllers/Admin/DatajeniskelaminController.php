@@ -41,12 +41,16 @@ class DatajeniskelaminController extends Controller
     {
         $request->validate([
             'jenis_kelamin' => 'required',
-            'jumlah' => 'required'
+            'jumlah' => 'required',
+
+
         ]);
 
         Datajeniskelamin::create([
             'jenis_kelamin' => $request->jenis_kelamin,
-            'jumlah' => $request->jumlah
+            'jumlah' => $request->jumlah,
+
+
         ]);
 
         return redirect()->route('admin.datajeniskelamin.index')->with('success', 'Data Berdasarkan Jenis Kelamin Berhasil Ditambahkan');
@@ -60,7 +64,7 @@ class DatajeniskelaminController extends Controller
      */
     public function show()
     {
-        $data = DB::table('jeniskelaminpenduduk')
+        $data = DB::table('databerdasarkanjeniskelamin')
             ->select('jenis_kelamin', DB::raw('SUM(jumlah) as total'))
             ->groupBy('jenis_kelamin')
             ->get();
@@ -99,11 +103,14 @@ class DatajeniskelaminController extends Controller
         $request->validate([
             'jenis_kelamin' => 'required',
             'jumlah' => 'required',
+
+
         ]);
 
         $datajeniskelamin->update([
             'jenis_kelamin' => $request->jenis_kelamin,
-            'jumlah' => $request->jumlah
+            'jumlah' => $request->jumlah,
+
         ]);
 
         return redirect()->route('admin.datajeniskelamin.index')->with('success', 'Data Berdasarkan Jenis Kelamin Berhasil Diubah');
